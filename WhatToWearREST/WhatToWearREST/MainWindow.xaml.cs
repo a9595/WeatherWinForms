@@ -35,17 +35,27 @@ namespace WhatToWearREST
 
             var temperature = forecastDal.currently.temperature;
             var summary = forecastDal.currently.summary;
+            var windSpeed = forecastDal.currently.windSpeed;
+            bool isRainy = forecastDal.currently.precipIntensity != 0;
+            //forecastDal.currently.icon
+
 
             labelTemp.Content = temperature.ToString(CultureInfo.InvariantCulture);
+            labelSummary.Content = summary.ToString();
 
 
-            
+
         }
 
         private void MainWindowLoaded(object sender, RoutedEventArgs e)
         {
            
             
+        }
+
+        private void ClickCity(object sender, EventArgs e)
+        {
+
         }
 
     }

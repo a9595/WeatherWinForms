@@ -10,31 +10,13 @@
     xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
     xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
     x:Class="WhatToWearREST.MainWindow"
-    Title="DXApplication" Height="700" Width="1100"
+    Title="What To Wear Tomorrow" Height="700" Width="1100"
     SnapsToDevicePixels="True" UseLayoutRounding="True"
     >
 
     <DockPanel>
-        <dxb:MainMenuControl Caption="MainMenu" DockPanel.Dock="Top">
-            <dxb:BarSubItem x:Name="smFile" CategoryName="BuiltIn" Content="File">
-                <dxb:BarButtonItem x:Name="bNew" CategoryName="File" Content="New" Glyph="{dx:DXImage Image=New_16x16.png}" KeyGesture="Ctrl+N" Hint="New Blank Document"/>
-                <dxb:BarButtonItem x:Name="bOpen" CategoryName="File" Content="Open" Glyph="{dx:DXImage Image=Open_16x16.png}" KeyGesture="Ctrl+O" Hint="Open"/>
-                <dxb:BarButtonItem x:Name="bClose" CategoryName="File" Content="Close" Glyph="{dx:DXImage Image=Close_16x16.png}" Hint="Close"/>
-                <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem x:Name="bSave" CategoryName="File" Content="Save" Glyph="{dx:DXImage Image=Save_16x16.png}" KeyGesture="Ctrl+S" Hint="Save Document"/>
-                <dxb:BarButtonItem x:Name="bSaveAs" CategoryName="File" Content="Save As..." Glyph="{dx:DXImage Image=SaveAs_16x16.png}" Hint="Save Document As..."/>
-                <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem x:Name="bPrint" CategoryName="File" Content="Print" Glyph="{dx:DXImage Image=Print_16x16.png}" KeyGesture="Ctrl+P"/>
-                <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem x:Name="bExit" CategoryName="File" Content="Exit" KeyGesture="Ctrl+X"/>
-            </dxb:BarSubItem>
-            <dxb:BarSubItem x:Name="smHelp" CategoryName="BuiltIn" Content="Help">
-                <dxb:BarButtonItem x:Name="bHome" CategoryName="Help" Content="Developer Express on the Web"/>
-                <dxb:BarItemSeparator/>
-                <dxb:BarButtonItem x:Name="bAbout" CategoryName="Help" Content="About"/>
-            </dxb:BarSubItem>
-        </dxb:MainMenuControl>
         <dxd:DockLayoutManager x:Name="dockLayoutManager">
             <dxd:LayoutGroup>
                 <dxd:LayoutPanel ItemWidth="200" Caption="Navigation" Padding="1">
@@ -42,15 +24,15 @@
                         <dxnb:NavBarControl.View>
                             <dxnb:SideBarView/>
                         </dxnb:NavBarControl.View>
-                        <dxnb:NavBarGroup Header="Group1" ImageSource="Images/Icons/Group.png">
-                            <dxnb:NavBarItem Content="Warsaw" ImageSource="Images/Icons/Item.png"/>
-                            <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
-                            <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
-                            <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
+                        <dxnb:NavBarGroup Header="Group1" ImageSource="Images/Icons/Group.png" Click="ClickCity" >
+                            <dxnb:NavBarItem Content="Warsaw" ImageSource="Images/Icons/Item.png" IsSelected="True"/>
+                            <dxnb:NavBarItem Content="London" ImageSource="Images/Icons/Item.png"/>
+                            <dxnb:NavBarItem Content="Maiami" ImageSource="Images/Icons/Item.png"/>
+                            <dxnb:NavBarItem Content="Antarctica" ImageSource="Images/Icons/Item.png"/>
                         </dxnb:NavBarGroup>
                     </dxnb:NavBarControl>
                 </dxd:LayoutPanel>
-                <dxd:LayoutGroup Orientation="Vertical" ItemWidth="4*">
+                <dxd:LayoutGroup Grid.Column="2" dxb:MergingProperties.ElementMergingBehavior="Undefined" ItemWidth="4*" ItemHeight="2.05*" Orientation="Horizontal" Grid.Row="0">
                     <dxd:TabbedGroup ItemHeight="2.05*">
                         <dxd:LayoutPanel Caption="MainView" ItemHeight="3*">
                             <Grid>
@@ -65,7 +47,7 @@
                                     <RowDefinition Height="0*"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <dxga:LinearGaugeControl x:Name="Termometer" Grid.Column="3" VerticalAlignment="Bottom" Margin="30,0,19,88" Height="286" Grid.RowSpan="2" Grid.Row="1">
+                                <dxga:LinearGaugeControl x:Name="Termometer" Grid.Column="2" VerticalAlignment="Bottom" Margin="101,0,23,10" Height="220" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2">
 
                                     <dxga:LinearGaugeControl.Model>
                                         <dxga:LinearRedThermometerModel/>
@@ -87,22 +69,27 @@
                                         </dxga:LinearScale>
                                     </dxga:LinearGaugeControl.Scales>
                                 </dxga:LinearGaugeControl>
-                                <Label x:Name="labelSummeay" Content="Summary" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,142,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113"/>
+                                <Label x:Name="labelSummary" Content="Summary" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,142,0,0" FontSize="20" Grid.ColumnSpan="2" Height="109" Width="199"/>
                                 <Label x:Name="labelTemp" Content="Temperature" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,98,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113" ToolTip="Temperature"/>
-                                <Label x:Name="labelSummery_Copy1" Content="^C" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="128,98,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113" ToolTip="Temperature"/>
+                                <Label x:Name="labelC" Content="F" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="128,98,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113" ToolTip="Temperature"/>
                                 <Label x:Name="labelSummery_Copy2" Content="City" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="320,10,0,0" FontSize="20" Grid.ColumnSpan="2" Height="35" Width="113" ToolTip="Temperature" FontWeight="Bold" FontStyle="Italic" FontFamily="Segoe WP Black"/>
 
                             </Grid>
                         </dxd:LayoutPanel>
-                        <dxd:LayoutPanel Caption="Panel"/>
-                        <dxd:LayoutPanel Caption="Panel"/>
                     </dxd:TabbedGroup>
                     <dxd:LayoutPanel Caption="DetailView" ItemHeight="0.95*">
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="133*"/>
+                                <RowDefinition Height="244*"/>
+                                <RowDefinition Height="263*"/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*" />
-                                <ColumnDefinition Width="35*" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="0*" />
                             </Grid.ColumnDefinitions>
+                            <Image HorizontalAlignment="Left" Height="100" Margin="140,23,0,0" VerticalAlignment="Top" Width="100"/>
+                            <Image HorizontalAlignment="Left" Height="100" Margin="118,10,0,0" VerticalAlignment="Top" Width="100"/>
                         </Grid>
                     </dxd:LayoutPanel>
                 </dxd:LayoutGroup>

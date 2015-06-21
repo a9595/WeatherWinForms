@@ -10,9 +10,9 @@ namespace WeatherRestClient
 {
     public class WeatherApiClient
     {
-        // https://api.forecast.io/forecast/9eb41bec29029fdc9c2a713c44b76b40/52.5931,19.0894
+        // https://api.forecast.io/forecast/9eb41bec29029fdc9c2a713c44b76b40/52.2337,21.0105
 
-        public static String endPoint = "https://api.forecast.io/forecast/9eb41bec29029fdc9c2a713c44b76b40/52.5931,19.0894";
+        public static String endPoint = "https://api.forecast.io/forecast/9eb41bec29029fdc9c2a713c44b76b40/52.2337,21.0105";
         private static WebClient _syncClient;
         private static ForecastDAL _weatherDal;
 
