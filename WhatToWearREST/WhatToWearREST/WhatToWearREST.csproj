@@ -125,6 +125,39 @@
       <Name>WeatherRestClient</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\weather\cloudy temp above 0\body cloudy temp above 0.png" />
+    <Resource Include="Images\weather\cloudy temp above 0\item cloudy temp above 0.png" />
+    <Resource Include="Images\weather\cloudy temp above 0\shoes cloudy temp above 0.png" />
+    <Resource Include="Images\weather\cloudy temp below 0\body cloudy temp below 0.png" />
+    <Resource Include="Images\weather\cloudy temp below 0\item cloudy temp below 0.png" />
+    <Resource Include="Images\weather\cloudy temp below 0\shoes cloudy temp below 0.png" />
+    <Resource Include="Images\weather\funny icon wtw.png" />
+    <Resource Include="Images\weather\hail\body hail.png" />
+    <Resource Include="Images\weather\hail\item hail.png" />
+    <Resource Include="Images\weather\hail\shoes hail.png" />
+    <Resource Include="Images\weather\rainy temp above 0\body rainy temp above 0.png" />
+    <Resource Include="Images\weather\rainy temp above 0\item rainy temp above 0.png" />
+    <Resource Include="Images\weather\rainy temp above 0\shoes rainy temp above 0.png" />
+    <Resource Include="Images\weather\rainy temp below 0\body rainy temp below 0.png" />
+    <Resource Include="Images\weather\rainy temp below 0\item rainy temp below 0.png" />
+    <Resource Include="Images\weather\rainy temp below 0\shoes rainy temp below 0.png" />
+    <Resource Include="Images\weather\snowy\body snowy.png" />
+    <Resource Include="Images\weather\snowy\item snowy.png" />
+    <Resource Include="Images\weather\snowy\shoes snowy.png" />
+    <Resource Include="Images\weather\sunny temp 0-15\body sunny temp 0-15.png" />
+    <Resource Include="Images\weather\sunny temp 0-15\item sunny temp 0-15.png" />
+    <Resource Include="Images\weather\sunny temp 0-15\shoes sunny temp 0-15.png" />
+    <Resource Include="Images\weather\sunny temp below 0\body sunny temp below 0.png" />
+    <Resource Include="Images\weather\sunny temp below 0\item sunny temp below 0.png" />
+    <Resource Include="Images\weather\sunny temp below 0\shoes sunny temp below 0.png" />
+    <Resource Include="Images\weather\sunny\body_sunny.png" />
+    <Resource Include="Images\weather\sunny\item_sunny.png" />
+    <Resource Include="Images\weather\sunny\shoes_sunny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\wear\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

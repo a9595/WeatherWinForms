@@ -47,7 +47,7 @@
                                     <RowDefinition Height="0*"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <dxga:LinearGaugeControl x:Name="Termometer" Grid.Column="2" VerticalAlignment="Bottom" Margin="101,0,23,10" Height="220" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2">
+                                <dxga:LinearGaugeControl x:Name="Termometer" Grid.Column="2" VerticalAlignment="Bottom" Margin="81,0,43,29" Height="220" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="2">
 
                                     <dxga:LinearGaugeControl.Model>
                                         <dxga:LinearRedThermometerModel/>
@@ -88,8 +88,9 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="0*" />
                             </Grid.ColumnDefinitions>
-                            <Image HorizontalAlignment="Left" Height="100" Margin="140,23,0,0" VerticalAlignment="Top" Width="100"/>
-                            <Image HorizontalAlignment="Left" Height="100" Margin="118,10,0,0" VerticalAlignment="Top" Width="100"/>
+                            <Image x:Name="imageBody" HorizontalAlignment="Left" Height="244" Margin="105,5,0,0" VerticalAlignment="Top" Width="232" Grid.Row="1" RenderTransformOrigin="0.5,0.364" Source="Images/weather/sunny/body_sunny.png" Grid.RowSpan="2"/>
+                            <Image x:Name="imageHead" HorizontalAlignment="Left" Height="100" Margin="105,33,0,0" VerticalAlignment="Top" Width="242" Source="Images/weather/sunny/item_sunny.png" Stretch="Fill"/>
+                            <Image x:Name="imageBody_Copy" HorizontalAlignment="Left" Height="168" Margin="136,5,0,0" VerticalAlignment="Top" Width="255" Grid.Row="2" RenderTransformOrigin="0.5,0.364" Source="Images/weather/cloudy temp above 0/shoes_sunny.png"/>
                         </Grid>
                     </dxd:LayoutPanel>
                 </dxd:LayoutGroup>

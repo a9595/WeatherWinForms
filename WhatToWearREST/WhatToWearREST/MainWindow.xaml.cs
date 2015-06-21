@@ -44,14 +44,23 @@ namespace WhatToWearREST
             labelSummary.Content = summary.ToString();
 
 
+            //HEAD
+            if (isRainy)
+            {
+            }
 
-        }
+            //imageHead.Source = new BitmapImage(new Uri(@"/Images/weather/shoes.png", UriKind.Relative));
+
+           
+    }
 
         private void MainWindowLoaded(object sender, RoutedEventArgs e)
         {
            
             
         }
+
+
 
         private void ClickCity(object sender, EventArgs e)
         {
