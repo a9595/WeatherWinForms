@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -17,6 +18,7 @@ using DevExpress.Xpf.Docking;
 using DevExpress.Xpf.NavBar;
 using DevExpress.Xpf.Charts;
 using DevExpress.Xpf.Gauges;
+using WeatherRestClient;
 
 
 namespace WhatToWearREST
@@ -26,6 +28,14 @@ namespace WhatToWearREST
         public MainWindow()
         {
             InitializeComponent();
+
+            WeatherApiClient weatherRestClient = new WeatherApiClient();
+
+            ForecastDAL forecastDal = weatherRestClient.GetWeatherDal();
+
+            var temperature = forecastDal.currently.temperature;
+
+            textBoxTemperature.Text = temperature.ToString(CultureInfo.InvariantCulture);
 
         }
 
