@@ -20,7 +20,7 @@ namespace WhatToWearREST
 
         private void OnAppStartup_UpdateThemeName(object sender, StartupEventArgs e)
         {
-
+            //sdf
             DevExpress.Xpf.Core.ApplicationThemeHelper.UpdateApplicationThemeName();
         }
     }

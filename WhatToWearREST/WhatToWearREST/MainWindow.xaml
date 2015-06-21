@@ -47,17 +47,10 @@
                     <dxnb:NavBarControl Name="navBarControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <dxnb:NavBarControl.Groups>
                             <dxnb:NavBarGroup Header="Group1" ImageSource="Images/Icons/Group.png">
-                                <dxnb:NavBarItem Content="Item1" ImageSource="Images/Icons/Item.png"/>
+                                <dxnb:NavBarItem Content="Warsaw" ImageSource="Images/Icons/Item.png"/>
                                 <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
                                 <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
                                 <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
-                            </dxnb:NavBarGroup>
-                            <dxnb:NavBarGroup Header="Group2" ImageSource="Images/Icons/Group.png">
-                                <dxnb:NavBarItem Content="Item1" ImageSource="Images/Icons/Item.png"/>
-                                <dxnb:NavBarItem Content="Item2" ImageSource="Images/Icons/Item.png"/>
-                                <dxnb:NavBarItem Content="Item3" ImageSource="Images/Icons/Item.png"/>
-                                <dxnb:NavBarItem Content="Item4" ImageSource="Images/Icons/Item.png"/>
-                                <dxnb:NavBarItem Content="Item5" ImageSource="Images/Icons/Item.png"/>
                             </dxnb:NavBarGroup>
                         </dxnb:NavBarControl.Groups>
                         <dxnb:NavBarControl.View>
@@ -98,7 +91,7 @@
                                     <dxc:Legend x:Name="legend"/>
                                 </dxc:ChartControl.Legend>
                             </dxc:ChartControl>
-                            <dxga:LinearGaugeControl Name="linearGaugeControl" Grid.Column="1" Padding="16" Background="White">
+                            <dxga:LinearGaugeControl Name="linearGaugeControl" Grid.Column="1" Padding="16" Background="White" Margin="12,-290,-12,290">
                                 <dxga:LinearGaugeControl.Model>
                                     <dxga:LinearRedThermometerModel/>
                                 </dxga:LinearGaugeControl.Model>
