@@ -34,9 +34,18 @@ namespace WhatToWearREST
             ForecastDAL forecastDal = weatherRestClient.GetWeatherDal();
 
             var temperature = forecastDal.currently.temperature;
+            var summary = forecastDal.currently.summary;
 
-            textBoxTemperature.Text = temperature.ToString(CultureInfo.InvariantCulture);
+            labelTemp.Content = temperature.ToString(CultureInfo.InvariantCulture);
 
+
+            
+        }
+
+        private void MainWindowLoaded(object sender, RoutedEventArgs e)
+        {
+           
+            
         }
 
     }
