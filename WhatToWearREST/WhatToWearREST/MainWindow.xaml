@@ -57,7 +57,8 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="96*"/>
                                     <ColumnDefinition Width="347*"/>
-                                    <ColumnDefinition Width="437*"/>
+                                    <ColumnDefinition Width="283*"/>
+                                    <ColumnDefinition Width="154*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="68*"/>
@@ -66,6 +67,29 @@
                                 </Grid.RowDefinitions>
                                 <TextBox x:Name="textBoxTemperature" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                                 <Label Content="Temperature" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,22,0,0" Height="22" Width="67"/>
+                                <dxga:LinearGaugeControl Grid.Column="3" VerticalAlignment="Bottom" Margin="30,0,19,88" Height="286" Grid.RowSpan="3">
+
+                                    <dxga:LinearGaugeControl.Model>
+                                        <dxga:LinearRedThermometerModel/>
+                                    </dxga:LinearGaugeControl.Model>
+                                    <dxga:LinearGaugeControl.Scales>
+                                        <dxga:LinearScale LayoutMode="BottomToTop" Height="NaN" Width="60" StartValue="-30" EndValue="40"> 
+                                            <dxga:LinearScale.Ranges>
+                                                <dxga:LinearScaleRange EndValue="33%" />
+                                                <dxga:LinearScaleRange EndValue="66%" StartValue="33%" />
+                                                <dxga:LinearScaleRange EndValue="100%" StartValue="66%" />
+                                            </dxga:LinearScale.Ranges>
+                                            <dxga:LinearScale.LevelBars>
+                                                <dxga:LinearScaleLevelBar Value="33" />
+                                            </dxga:LinearScale.LevelBars>
+                                            <dxga:LinearScale.Layers>
+                                                <dxga:LinearScaleLayer />
+                                                <dxga:LinearScaleLayer />
+                                            </dxga:LinearScale.Layers>
+                                        </dxga:LinearScale>
+                                    </dxga:LinearGaugeControl.Scales>
+                                </dxga:LinearGaugeControl>
+
                             </Grid>
                         </dxd:LayoutPanel>
                         <dxd:LayoutPanel Caption="Panel"/>
