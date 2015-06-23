@@ -12,26 +12,13 @@
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
     xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
     x:Class="WhatToWearREST.MainWindow"
-    Title="What To Wear Tomorrow" Height="700" Width="1100"
+    Title="What To Wear Tomorrow" Height="706" Width="870.5"
     SnapsToDevicePixels="True" UseLayoutRounding="True"
     >
 
     <DockPanel>
         <dxd:DockLayoutManager x:Name="dockLayoutManager">
             <dxd:LayoutGroup>
-                <dxd:LayoutPanel ItemWidth="200" Caption="Navigation" Padding="1">
-                    <dxnb:NavBarControl x:Name="navBarControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <dxnb:NavBarControl.View>
-                            <dxnb:SideBarView/>
-                        </dxnb:NavBarControl.View>
-                        <dxnb:NavBarGroup Header="Group1" ImageSource="Images/Icons/Group.png" Click="ClickCity" >
-                            <dxnb:NavBarItem Content="Warsaw" ImageSource="Images/Icons/Item.png" IsSelected="True"/>
-                            <dxnb:NavBarItem Content="London" ImageSource="Images/Icons/Item.png"/>
-                            <dxnb:NavBarItem Content="Maiami" ImageSource="Images/Icons/Item.png"/>
-                            <dxnb:NavBarItem Content="Antarctica" ImageSource="Images/Icons/Item.png"/>
-                        </dxnb:NavBarGroup>
-                    </dxnb:NavBarControl>
-                </dxd:LayoutPanel>
                 <dxd:LayoutGroup Grid.Column="2" dxb:MergingProperties.ElementMergingBehavior="Undefined" ItemWidth="4*" ItemHeight="2.05*" Orientation="Horizontal" Grid.Row="0">
                     <dxd:TabbedGroup ItemHeight="2.05*">
                         <dxd:LayoutPanel Caption="MainView" ItemHeight="3*">
@@ -69,10 +56,13 @@
                                         </dxga:LinearScale>
                                     </dxga:LinearGaugeControl.Scales>
                                 </dxga:LinearGaugeControl>
-                                <Label x:Name="labelSummary" Content="Summary" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,142,0,0" FontSize="20" Grid.ColumnSpan="2" Height="109" Width="199"/>
+                                <Label x:Name="labelSummary" Content="Summary" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,147,0,0" FontSize="20" Grid.ColumnSpan="4" Height="94" Width="399"/>
                                 <Label x:Name="labelTemp" Content="Temperature" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,98,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113" ToolTip="Temperature"/>
-                                <Label x:Name="labelC" Content="F" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="128,98,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113" ToolTip="Temperature"/>
+                                <Label x:Name="labelC" Content="°C" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="128,98,0,0" FontSize="20" Grid.ColumnSpan="2" Height="49" Width="113" ToolTip="Temperature"/>
                                 <Label x:Name="labelSummery_Copy2" Content="City" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="320,10,0,0" FontSize="20" Grid.ColumnSpan="2" Height="35" Width="113" ToolTip="Temperature" FontWeight="Bold" FontStyle="Italic" FontFamily="Segoe WP Black"/>
+                                <Label x:Name="labelCity" Content="Warsaw" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="158,20,0,0" FontSize="20" Grid.ColumnSpan="3" Height="49" Width="113" ToolTip="Temperature" FontWeight="Bold"/>
+                                <Label x:Name="labelWind" Content="Wind" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,246,0,0" FontSize="20" Grid.ColumnSpan="3" Height="49" Width="335" ToolTip="Temperature"/>
+                                <Label x:Name="labelIcon" Content="Icon" HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top" Margin="10,300,0,0" FontSize="20" Grid.ColumnSpan="3" Height="49" Width="335" ToolTip=""/>
 
                             </Grid>
                         </dxd:LayoutPanel>

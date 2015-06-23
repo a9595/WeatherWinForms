@@ -34,15 +34,23 @@ namespace WhatToWearREST
             ForecastDAL forecastDal = weatherRestClient.GetWeatherDal();
 
             var temperature = forecastDal.currently.temperature;
+
+
             var summary = forecastDal.currently.summary;
             var windSpeed = forecastDal.currently.windSpeed;
-            bool isRainy = forecastDal.currently.precipIntensity != 0;
+            bool isRainy = Math.Abs(forecastDal.currently.precipIntensity) > 0.1;
+            var humidity = forecastDal.currently.humidity;
+            var icon = forecastDal.currently.icon;
+
+
+
             //forecastDal.currently.icon
 
 
             labelTemp.Content = temperature.ToString(CultureInfo.InvariantCulture);
-            labelSummary.Content = summary.ToString();
-
+            labelSummary.Content = summary;
+            labelWind.Content = windSpeed.ToString(provider:CultureInfo.InvariantCulture);
+            
 
             //HEAD
             if (isRainy)
